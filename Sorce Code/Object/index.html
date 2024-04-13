@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // To define the Object
+        let product = {
+            company: "Apple",
+            product_item: "Laptop",
+            price: 234,
+            working: true,
+        }
+        // There are two ways to access the Object.
+        // 1) Using " . " operator 
+        //To access the object using " . " operator.
+        console.log(product);
+       //To access individual items in Object
+        console.log(product.company);
+
+        // 2) There is one more way to access the Object using [].
+        console.log(product["price"]);
+
+        // We can have object like object within an object and function within an object and this function is called method/
+        let product1={
+            company: "Apple",
+            product_item: "Laptop",
+            price: 234,
+            working: true,
+            rating: {
+               stars: 4.5,
+               noOfReviews: 23,
+            },
+            display: function(){
+                console.log("Function inside an Object");
+            }
+        }
+        console.log(product1.rating.noOfReviews);
+        product1.display();
+
+        //To delete the items(keys) from the object
+          delete product1.price;
+          console.log(product1);
+
+          // To update the Object items values
+          product1.product_item="Mobile";
+          console.log(product1);
+</script>
+</body>
+</html>

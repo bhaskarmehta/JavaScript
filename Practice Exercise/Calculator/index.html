@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calc{
+            height: 400px;
+            width: 350px;
+            border: 2px solid;
+        }
+        .num_input{
+            width: 90%;
+            margin: 10px;
+            height: 40px;
+        }
+
+        tr td{
+            padding: 30px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc" >
+       <table>
+           <tr>
+            <input class="num_input" type="text" readonly >
+           </tr>
+           <tr>
+            <td><button onclick="currentDisplayValue= currentDisplayValue + '1';
+                document.querySelector('.num_input').value=currentDisplayValue;
+                ">1</button></td>
+            <td><button onclick="currentDisplayValue= currentDisplayValue + '2';
+                document.querySelector('.num_input').value=currentDisplayValue;
+                ">2</button></td>
+            <td><button onclick="currentDisplayValue= currentDisplayValue + '3';
+                document.querySelector('.num_input').value=currentDisplayValue;
+                ">3</button></td>
+            <td><button onclick=" currentDisplayValue= currentDisplayValue + '+'
+                document.querySelector('.num_input').value=currentDisplayValue;
+                ">+</button></td>
+           </tr>
+           <tr class="tr">
+            <td><button onclick="currentDisplayValue= currentDisplayValue + '4';
+            document.querySelector('.num_input').value=currentDisplayValue;
+            ">4</button></td>
+            <td><button onclick="currentDisplayValue= currentDisplayValue + '5';
+            document.querySelector('.num_input').value=currentDisplayValue;
+            ">5</button></td>
+            <td><button onclick="currentDisplayValue= currentDisplayValue + '6';
+            document.querySelector('.num_input').value=currentDisplayValue;
+            ">6</button></td>
+            <td><button onclick="currentDisplayValue= currentDisplayValue + '-';
+                document.querySelector('.num_input').value=currentDisplayValue;">-</button></td>
+           </tr>
+            <tr class="tr">
+              <td><button onclick="currentDisplayValue= currentDisplayValue + '7';
+                    document.querySelector('.num_input').value=currentDisplayValue;
+                    ">7</button></td>
+              <td><button onclick="currentDisplayValue= currentDisplayValue + '8';
+                document.querySelector('.num_input').value=currentDisplayValue;
+                ">8</button></td>
+              <td><button onclick="currentDisplayValue= currentDisplayValue + '9';
+                document.querySelector('.num_input').value=currentDisplayValue;
+                ">9</button></td>
+              <td><button onclick="currentDisplayValue= currentDisplayValue + '*';
+                document.querySelector('.num_input').value=currentDisplayValue;">*</button></td>
+           </tr>
+            </tr>
+            <tr>
+                <td><button onclick="currentDisplayValue= eval(currentDisplayValue);
+                    document.querySelector('.num_input').value=currentDisplayValue;
+                    ">=</button></td>
+              <td><button onclick="currentDisplayValue= '';
+                document.querySelector('.num_input').value=currentDisplayValue;">C</button></td>
+              <td><button onclick="currentDisplayValue= currentDisplayValue + '0';
+                document.querySelector('.num_input').value=currentDisplayValue;">0</button></td>
+              <td><button onclick="currentDisplayValue= currentDisplayValue + '/';
+                document.querySelector('.num_input').value=currentDisplayValue;">/</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let currentDisplayValue='';
+        document.querySelector('.num_input').value=currentDisplayValue;
+
+
+    </script>
+</body>
+</html>

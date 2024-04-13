@@ -1,0 +1,141 @@
+<!-- Task 
+
+1) Create a varibale multiply and design a function to this variable that multiplies two numbers. Call this method from the variable.
+2) Create a function runTwice that takes a function as a parameter and then runs that method twice.
+3) Create a button which should grow double in size on clicking after 2 seconds.
+4) In the above exercise add the behaviour using event listener instead of onclick.
+5) Create a function that sums an array of numbers. Do this using a for-each loop.
+6) Create a function that takes an array of numbers and return their squares using map function. -->
+
+<!-- 3) Create a button which should grow double in size on clicking after 2 seconds. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           .btn{
+            background-color: red;
+            color: white;
+            width: 80px;
+            font-size: 15px;
+            border-radius: 4px;
+           }
+
+           .btn-double{
+            background-color: red;
+            color: white;
+            width: 160px;
+            font-size: 30px;
+            border-radius: 8px;
+           }
+    </style>
+</head>
+<body>
+    <button class="btn">Click Me</button>
+
+        <script>
+           let button = document.querySelector('button');
+            let doubleSize = () =>{
+                setTimeout(()=>{
+                     button.classList.remove('btn');
+                     button.classList.add('btn-double')
+
+        },2000)
+            }
+
+        button.addEventListener('click',doubleSize);
+        </script>
+
+</body>
+</html> -->
+
+<!-- 1) Create a varibale multiply and design a function to this variable that multiplies two numbers. Call this method from the variable. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let multiply = (num1,num2) =>{
+            return num1*num2;
+        }
+        console.log(multiply(3,4));
+    </script>
+</body>
+</html> -->
+
+
+<!-- 2) Create a function runTwice that takes a function as a parameter and then runs that method twice. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let runTwice = (greet) =>{
+               greet();
+               greet();
+        }
+
+        let greet =() =>{
+            console.log("Hello")
+        }
+
+        runTwice(greet);
+    </script>
+</body>
+</html> -->
+
+
+<!-- 5) Create a function that sums an array of numbers. Do this using a for-each loop. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sumArray = (arr) =>{
+            let sum = 0;
+             arr.forEach(element => {
+                sum+=element;
+             });
+             return sum;
+        }
+        let arr = [1,2,3,4,5,6];
+        console.log(sumArray(arr))
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- 6) Create a function that takes an array of numbers and return their squares using map function. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5];
+        let squareFunc = (arr) =>{
+            return arr.map(num =>num*num)
+       }
+
+       console.log(squareFunc(arr));
+    </script>
+</body>
+</html> -->

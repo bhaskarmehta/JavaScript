@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // We can store any datatype in an Array in JS
+        const arr = [1, 2,true,"Bhakar",{name: {firsrName: "BhaskarM",LastName: "Mehta"}},()=>console.log("Hello In Array")];
+        // console.log(arr[4].name.firsrName);
+
+        // To access the values of array.
+        //console.log(arr[4].LastName);
+        //To call a function inside an array
+        // console.log(arr[5]());
+
+        // Array Properties 
+
+        // 1) To find the length of an array
+        // const arrLength = arr.length;
+        // console.log(arrLength);
+
+        // 2) To check whether a variable is an array or not
+        // console.log(Array.isArray(arr));
+
+        //Array Methods
+       // 1) Push and Pop  - Its add and remove the element in an array from last. Pop also returns a popped element.
+       
+       const arr2 = [1,2,3,4,6,7,9];
+       //arr2.push(5);
+       //console.log(arr2);
+
+      //    const poppedElement = arr2.pop();
+      //    console.log(poppedElement);
+      //    console.log(arr2);
+
+       // 2) Shift and Unshift -  Shift will remove the item and unshift will add the item from start.
+        // const removedItem = arr2.shift();
+        // console.log(removedItem);
+        // console.log(arr2);
+
+        // arr2.unshift("Apple",10);
+        // console.log(arr2);
+
+        // 3) Splice - It removes the item that takes to argument first is index from where to start deleting and second count means how many item have to remove
+        // const removedItem = arr2.splice(4,2); // It will remove 6 and 7 and store them in a variable
+        // console.log(removedItem);
+        // console.log(arr2);
+
+        // 4) toString - It will convert an array into a string.
+        // const strVar = arr2.toString();
+        // console.log(strVar);
+        // console.log(typeof strVar)
+
+        // 5) join() - It joins the array values based on given condition like how we want to join our item like using commas(,) or spaces(" ") etc.
+        // console.log(arr2.join("+ "));
+        // console.log(arr2.join(","));
+        // console.log(arr2.join(" "));
+        // console.log(arr2);
+
+        //  let arr3 = [{item:'Mytask',price:871}];
+        //  console.log(arr3[0].item)
+
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- Task - 
+1. Save your name in a variable inside script tag
+2. Display name from the variable on the page.
+3. Use eval method from math to convert string calculation into result. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="name-id"></h1>
+    <script>
+        // 1. Save your name in a variable inside script tag
+        let name="Bhaskar";
+
+        //2. Display name from the variable on the page.
+        document.querySelector('#name-id').innerText=`My name is ${name}`
+
+        // 3. Use eval method from math to convert string calculation into result.
+        console.log(eval('34 + 23'));
+    
+    </script>
+</body>
+</html>

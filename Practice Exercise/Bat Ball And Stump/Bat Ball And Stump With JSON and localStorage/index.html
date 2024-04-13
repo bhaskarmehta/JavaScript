@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        button img{
+            height: 50px;
+        }
+
+        #reset{
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <div>
+        <button class="btn" id="bat" onclick="
+            userChoice = 'Bat';
+            compFunc();
+            winLoseTieScore();
+        "><img src="images/bat.jpg" alt="Cricket Bat Image"></button>
+
+        <button class="btn" id="ball" onclick="
+           userChoice= 'Ball';
+           compFunc();
+           winLoseTieScore();
+        "><img src="images/ball.jpg" alt="Cricket Ball Image"></button>
+
+        <button class="btn" id="stump" onclick="
+          userChoice='Stump';
+          compFunc();
+          winLoseTieScore();
+        "><img src="images/stump.jpg" alt="Cricket Stump Image"></button>
+
+        <div>
+            <button class="btn" id="reset" onclick="
+            localStorage.clear();
+            location.reload(); 
+        ">Reset</button>
+        </div>
+    </div>
+
+    <div>
+        <h1 id="you"></h1>
+        <h1 id="computer"></h1>
+        <h1 id="result"></h1>
+        <h1 id="matches"></h1>
+    </div>
+
+    <script>
+
+        let strScore = localStorage.getItem('Score'); // To persist the data in localsotrage even if we refresh the page
+        let score = JSON.parse(strScore) || {  // This we have seen in Truthy and Falsy
+                win: 0,
+                lose: 0,
+                tie:0,
+            };
+         // Above code is same as below code.    
+        // if (strScore !== null && strScore !== undefined) {
+        //     score = JSON.parse(strScore);
+        // } else {
+        //     score = {
+        //         win: 0,
+        //         lose: 0,
+        //         tie:0,
+        //     };
+        // }
+
+        score.displayScore = ()=>{
+                    document.querySelector('#matches').innerText = `Matches  :  Win = ${score.win}, Lost = ${score.lose}, Ties = ${score.tie}`;
+        }
+
+        let userChoice;
+
+        function compFunc() {
+            localStorage.setItem('Score', JSON.stringify(score));
+            let comChoice = Math.random() * 3;
+            let comChoiceVal;
+            if (comChoice <= 1) {
+                comChoiceVal = 'Bat';
+                document.querySelector('#computer').innerText = `Computer has chosen ${comChoiceVal}`;
+                document.querySelector('#you').innerText = `You have chosen ${userChoice}`;
+                if (comChoiceVal === userChoice) {
+                    document.querySelector('#result').innerText = 'It is tie';
+                    score.tie += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                } else if (userChoice === "Ball") {
+                    document.querySelector('#result').innerText = 'Computer won the match';
+                    score.lose += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                } else {
+                    document.querySelector('#result').innerText = 'You won the match';
+                    score.win += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                }
+            } else if (comChoice <= 2) {
+                comChoiceVal = 'Ball';
+                document.querySelector('#computer').innerText = `Computer has chosen ${comChoiceVal}`;
+                document.querySelector('#you').innerText = `You have chosen ${userChoice}`;
+                if (comChoiceVal === userChoice) {
+                    document.querySelector('#result').innerText = 'It is tie';
+                    score.tie += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                } else if (userChoice === "Bat") {
+                    document.querySelector('#result').innerText = 'You won the match';
+                    score.win += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                } else {
+                    document.querySelector('#result').innerText = 'Computer won the match';
+                    score.lose += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                }
+            } else {
+                comChoiceVal = 'Stump';
+                document.querySelector('#computer').innerText = `Computer has chosen ${comChoiceVal}`;
+                document.querySelector('#you').innerText = `You have chosen ${userChoice}`;
+                if (comChoiceVal === userChoice) {
+                    document.querySelector('#result').innerText = 'It is tie';
+                    score.tie += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                } else if (userChoice === "Ball") {
+                    document.querySelector('#result').innerText = 'You won the match';
+                    score.win += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                } else {
+                    document.querySelector('#result').innerText = 'Computer won the match';
+                    score.lose += 1;
+                    localStorage.setItem('Score', JSON.stringify(score));
+                }
+            }
+        }
+
+        function winLoseTieScore() {
+            score.displayScore();
+        }
+
+    </script>
+</body>
+</html>

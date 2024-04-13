@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Object Refrences
+        const product={
+           company: "Mango",
+           itemName: 'T-shirt',
+           price: 871,
+        }
+        // console.log("Product Product");
+        // console.log(product);
+
+        // const product1= product;
+        // console.log("Product1 Product")
+        // console.log(product1);
+
+        // product.price=999;
+
+        // console.log("Product Product");
+        // console.log(product);
+        // console.log("Product1 Product")
+        // console.log(product1);
+
+    // In normal way access the item of object
+     const companyName=product.company;
+     console.log(companyName);
+
+    // Destructing in Object - Using Destructuring we can get the item as-
+    const {company} = product;  // Here name of item must be same as the name of item in product object
+    console.log(company);
+
+    // We can get more variable using Destructuring as -
+    const {itemName,price}=product;
+    console.log(`Item name is ${itemName} and price is ${price}`);
+
+    
+
+    </script>
+</body>
+</html>

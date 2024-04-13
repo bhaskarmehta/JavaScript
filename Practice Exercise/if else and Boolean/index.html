@@ -1,0 +1,39 @@
+<!-- Task - 
+
+1) Give discount on age, gender for metro ticket 
+  - Female gets 50% off
+  - Kids under 5 years of age are free
+  - Kids upto 8 years have half ticket
+  - People over 65 years of age only pay 30% of the ticket.
+  - In case of multiple discounts max discount will apply. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let gender = prompt('Enter your gender : ');
+        let age = prompt('Enter your age : ');
+
+        if(age<=5){
+            console.log("You can travel free");
+        }
+        else if(age<=8 || gender==="Female" || gender==="female" ){
+            console.log("You have to pay only 50% of the ticket");
+        }
+        else if(age>=65){
+            console.log("You have to pay only 30 % of the ticket")
+        }
+        else
+        {
+            console.log("You have to pay 100% of the ticket.")
+        }
+    </script>
+</body>
+</html>

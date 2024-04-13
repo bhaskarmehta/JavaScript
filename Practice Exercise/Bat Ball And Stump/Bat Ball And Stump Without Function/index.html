@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <div>
+        <button class="btn" id="bat" onclick="
+            userChoice = 'bat';
+            document.querySelector('#you').innerText='You have choosen Bat';
+            // console.log('You have choosen Bat');
+            comChoice  = Math.random()*3;
+            if(comChoice<=1){
+                document.querySelector('#computer').innerText='Computer has choosen Bat';
+                // console.log('Computer has choosen Bat');
+                document.querySelector('#result').innerText='It is tie';
+                // console.log('It is tie');
+            }
+            else if(comChoice<=2){
+                document.querySelector('#computer').innerText='Computer has choosen Ball';
+                //console.log('Computer has choosen Ball');
+                document.querySelector('#result').innerText='You won the match';
+                //console.log('You won the match');
+            }
+            else{
+                document.querySelector('#computer').innerText='Computer has choosen Stump';
+                //console.log('Computer has choosen Stump');
+                document.querySelector('#result').innerText='Computer won the match';
+                //console.log('Computer won the match');
+            }
+
+            " >Bat</button>
+
+            
+        <button class="btn" id="ball" onclick="
+
+           userChoice= 'Ball';
+           document.querySelector('#you').innerText='You have choosen Ball';
+          //console.log('You have choosen Ball');
+            comChoice  = Math.random()*3;
+            if(comChoice<=1){
+                document.querySelector('#computer').innerText='Computer has choosen Bat';
+                //console.log('Computer has choosen Bat');
+                document.querySelector('#result').innerText='Computer won the match';
+                //console.log('Computer won the match');
+            }
+            else if(comChoice<=2){
+                document.querySelector('#computer').innerText='Computer has choosen Ball';
+                //console.log('Computer has choosen Ball');
+                document.querySelector('#result').innerText='It is tie';
+                //console.log('It is tie');
+            }
+            else{
+                document.querySelector('#computer').innerText='Computer has choosen Stump';
+                //console.log('Computer has choosen Stump');
+                document.querySelector('#result').innerText='You won the match';
+                //console.log('You won the match');
+            }
+        ">Ball</button>
+
+        <button class="btn" id="stump" onclick="
+         userChoice='Stump';
+         document.querySelector('#you').innerText='You have choosen Stump';
+        //console.log('You have choosen Stump');
+          comChoice  = Math.random()*3;
+          if(comChoice<=1){
+            document.querySelector('#computer').innerText='Computer has choosen Bat';
+            //   console.log('Computer has choosen Bat');
+            document.querySelector('#result').innerText='You won the match';
+              //console.log('You won the match');
+          }
+          else if(comChoice<=2){
+            document.querySelector('#computer').innerText='Computer has choosen Ball';
+             // console.log('Computer has choosen Ball');
+             document.querySelector('#result').innerText='Computer won the match';
+            //  console.log('Computer won the match');
+          }
+          else{
+            document.querySelector('#computer').innerText='Computer has choosen Stump';
+            //  console.log('Computer has choosen Stump');
+            document.querySelector('#result').innerText='It is tie';
+             // console.log('It is tie');
+          }
+      ">Stump</button>
+    </div>
+
+     <div>
+        <h1 id="you"></h1>
+        <h1 id="computer"></h1>
+        <h1 id="result"></h1>
+     </div>
+
+    <script>
+          let userChoice;
+    </script>
+</body>
+</html>

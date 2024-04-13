@@ -1,0 +1,132 @@
+<!-- Task - 
+
+1) Create Object to represent a product from Myntra
+2) Create an Object with two references and log changes to one object by changing the other one.
+3) Use bracket notation to display delivery-time.
+4) Given an Object {message: 'good job', status: 'complete' }, use destructuring to create two variables message and status.
+5) Add function isIdenticalProduct to compare two product objects. -->
+
+<!-- 1) Create Object to represent a product from Myntra -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myObj = {
+            company: "Apple",
+            price: 871,
+            itemName: "T-shirt",
+        }
+        console.log(myObj);
+    </script>
+</body>
+</html> -->
+
+
+ <!-- 2) Create an Object with two references and log changes to one object by changing the other one. -->
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        let product1 = {
+            company: "Mango",
+            price:871,
+            itemName: 'T-shirt',
+        }
+        let product2 = product1;
+        console.log("Before changing value in Product1 Object");
+        console.log(product1);
+        console.log(product2);
+
+        product1.company = "Apple";
+        console.log("After changing value in Product1 Object");
+        console.log(product1);
+        console.log(product2);
+
+
+    </script>
+ </body>
+ </html> -->
+
+
+<!-- 3) Use bracket notation to display delivery-time. -->
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        let product1 = {
+            company: "Mango",
+            price:871,
+            itemName: 'T-shirt',
+            'delivery-time': "Same day delivery",
+        }
+        
+        console.log(product1['delivery-time']);
+    </script>
+ </body>
+ </html> -->
+
+<!-- 4) Given an Object {message: 'good job', status: 'complete' }, use destructuring to create two variables message and status. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            message: 'good job',
+            status: 'complete',
+        }
+        const {message,status} = obj;
+        console.log(`Message is ${message} and status is ${status}`);
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- 5) Add function isIdenticalProduct to compare two product objects. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const product = {
+            company: "Mango",
+            price: 871,
+            item: 'T-shirt',
+        }
+
+        const isIdenticalProduct = (obj1,obj2) =>{
+            if(obj1===obj2){
+                return "Both Objects are same";
+            }
+            return "Both are not same";
+        }
+
+        console.log(isIdenticalProduct(product.company,product.item));
+    </script>
+</body>
+</html> -->

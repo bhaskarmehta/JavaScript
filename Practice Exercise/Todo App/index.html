@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        h1{
+            text-align: center;
+        }
+        .input-side{
+            text-align: center;
+            margin: 20px;
+            display:flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        input{
+            width: 200px;
+            height: 50px;
+            font-size: large;
+            font-weight: 600;
+            margin: 10px;
+            border: 2px solid;
+            border-radius: 3px;
+        }
+        div{
+            text-align: center;
+            justify-content: center; 
+            text-align: center;
+            margin: 20px;
+        }
+        div span{
+            width: 200px;
+            height: 50px;
+            font-size: large;
+            font-weight: 600;
+            margin: 10px;
+            border-radius: 3px;
+            margin-top: 25px;
+        }
+        button{
+            width: 100px;
+            height: 53px;
+            font-size: large;
+            font-weight: 600;
+            margin: 10px;
+            background-color: green;
+            border-radius: 10px;
+        }
+        .delBtn{
+            margin-left: 31px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <div class="input-side">    
+        <input id="todo-input" type="text" placeholder="Enter TODO here">
+        <input id="todo-date" type="date">
+        <button onclick="addTodo()">Add</button>
+    </div>
+    <div class="todo-container"></div>
+    <script>
+        let todoList = [];
+        displayItems();
+        let addTodo = () =>{
+            displayItems();
+            let inputElement = document.querySelector('#todo-input');
+            let inputDate = document.querySelector('#todo-date');
+            let todoItem = inputElement.value;
+            let todoDate = inputDate.value;
+            todoList.push({item:todoItem,dueDate:todoDate});
+            inputElement.value = '';
+            inputDate.value='';
+            displayItems();
+        }
+        
+        function displayItems(){
+            let containerElement = document.querySelector('.todo-container')
+            let newHtml='';
+            for (let i=0;i<todoList.length;i++){
+                let {item,dueDate} = todoList[i];
+                newHtml += `
+                   <div>
+                      <span>${item}</span>
+                      <span>${dueDate}</span>
+                      <button onclick="
+                        todoList.splice(${i},1);
+                        displayItems();
+                      ">Delete</button>
+                    </div>
+                `
+                //   <span>${todoList[i].item}</span> Instead of this we have used destructing
+                //   <span>${todoList[i].dueDate}</span>
+            }
+            containerElement.innerHTML = newHtml;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+#btn-id{
+    background-color: red;
+}
+
+.btn-class{
+    background-color: red;
+}
+
+#bag-btn{
+    background-color: rgb(207, 134, 134);
+    border-radius: 7px;
+    width: 100px;
+    margin: 20px;
+}
+
+
+#wishlist-btn{
+    width: 175px;
+    border: 2px solid;
+    border-radius: 7px;
+    font-weight: 500;
+
+}
+
+
+#sale-btn{
+    background-color: lightgreen;
+    border-radius: 7px;
+    padding: 5px 15px;
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let age=70;
+        // if(age<18){
+        //     console.log("You can't vote");
+        // }
+        // else if(age>60){
+        //     console.log("You can vote later");
+        // }
+        // else{
+        //     console.log("You can vote");
+        // }
+
+
+        // console.log(5==5);
+        // console.log("5"==5);
+        // console.log("5"==="5.0");
+        // console.log(5===5);
+
+        // Truthy and Falsy Values
+        let name="";
+        if(name)
+        {
+            console.log(`Your name is ${name}`);
+        }
+        console.log(typeof name);
+
+        //Turnery Operator
+        let age= 22;
+        let output = (age>20)?`Your age is ${age}`:`Please grow up`
+        console.log(output);
+
+        //Guard Operator
+        let myage;
+        let age1=myage || 22;
+        let output1 = (age1>20)?`Your age is ${age1}`:`Please grow up`
+        console.log(output1);
+
+        //Default Operator
+         let a;
+         let b= null ?? 5/"test";
+         let c = (b>30)?`${b} is greater`: `${b} is lower`;
+         console.log(c);
+
+
+    </script>
+</body>
+</html>

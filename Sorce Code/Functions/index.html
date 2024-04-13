@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function Without Return Statement
+        function myName(){
+            console.log("My name is Bhaskar Mehta");
+        }
+        myName();
+ 
+
+        //Function with Return Statement
+        function returnName(){
+            return "Your name is Bhaskar"
+        }
+        let myname= returnName(); // Storing the function's returned value into a variable
+        console.log(myname);
+
+        //function with parameter
+        function paramFunc(name) // Here we are passing parameter to a function body
+        {
+            return `Your name is ${name}`
+        }
+        console.log(paramFunc("Bhaskar Mehta")); // Here we are passing argument to function
+
+
+        // Scope of a variable in function
+        // 1) let scope - It's scope is within a {}.
+        function letFunc()
+        {
+            let num1=10;
+            if(num1>9){
+                let name="Bhaskar";
+                console.log(`My name is ${name} from let scope`);
+            }
+            // Here we can't access the "name" variable outside of this {}.
+            console.log(`My name is ${name} from let scope`);
+        }
+        letFunc();
+
+        // 2) const scope - It's scope is also within the {}
+        function constFunc()
+        {
+            let num1=10;
+            if(num1>9){
+                const name="Bhaskar";
+                console.log(`My name is ${name} from const scope`);
+            }
+            // Here we can't access the "name" variable outside of this {}.
+            console.log(`My name is ${name} from const scope`);
+        }
+        constFunc();
+
+        // 3) var scope - It's scope is within the function.
+        function varFunc()
+        {
+            let num1=10;
+            if(num1>9){
+                var name="Bhaskar";
+                console.log(`My name is ${name} from var scope`);
+            }
+            // Here we are able to access the "name" variable outside of this {}.
+            console.log(`My name is ${name} from var scope`);
+        }
+        varFunc();
+        // Here we can't access the "name" variable outside of this function.
+        console.log(`My name is ${name} from var scope`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!-- Task - 
+
+1) Display good morning, afternoon and night based on current hour.
+2) Add the name to the output too.
+3) Create a button which shows the number how many times it has been pressed.
+   - Also, it has different colors for when it has been pressed odd or even times.
+   - The click count should also survive browser refresh. -->
+
+
+
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .odd{
+              background-color: red;
+        }
+        .even{
+            background-color: blue;
+        }
+    </style>
+   </head>
+   <body>
+       <button class="btn odd even" onclick="buttonPressed()">0</button>
+       <script>
+
+        let noOfTimesClicked = localStorage.getItem('noOfTimesClicked') || 0;
+        function buttonPressed(){
+            let button = document.querySelector('.btn');
+            noOfTimesClicked++;
+            localStorage.setItem('noOfTimesClicked',noOfTimesClicked)
+            button.innerText = noOfTimesClicked;
+            if(noOfTimesClicked%2===0){
+                button.classList.remove('odd')
+                button.classList.add('even')
+            }
+            else{
+                document.querySelector('button').classList.remove('even')
+                document.querySelector('button').classList.add('odd')
+            }
+        }
+       </script>
+   </body>
+   </html>
+
+
+   <!-- 1) Display good morning, afternoon and night based on current hour.
+   2) Add the name to the output too. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h1 id="greet"></h1>
+
+        <script>
+            const date = new Date();
+            // let user = prompt("Enter your name");
+            if(date.getHours >=1 && date.getHours<12){
+                document.querySelector('#greet').innerText = `Good Morning  `;
+            }
+            else if(date.getHours >=12&& date.getHours<6){
+                document.querySelector('#greet').innerText = `Good Afternoon`;
+            }
+            else{
+                document.querySelector('#greet').innerText = `Good Night`;
+            }
+        </script>
+</body>
+</html>  -->
+
+
+
+
+

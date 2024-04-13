@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // Async - The word async before a function means a functions that always returns a promise.
+
+        const func1 = ()=>{
+            return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("I am Func1");
+           }, 5000);
+         });
+        };
+        
+    
+        const func2 = ()=>{
+          return  new Promise((resolve,reject)=>{
+                resolve("I am Func2");
+            })
+        }
+        const func3 = ()=>{
+           return new Promise((resolve,reject)=>{
+                resolve("I am Func3");
+            })
+        }
+
+        const myAsyncFunc = async ()=>{
+            const data1 = await func1(); // Here Func2 and Func3 will wait for 5 secs and then they will get executed
+            console.log(data1);
+
+            const data2= await func2();
+            console.log(data2);
+
+            const data3= await func3();
+            console.log(data3);
+        }
+
+        myAsyncFunc();
+
+    </script>
+</body>
+</html>

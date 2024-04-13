@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Bhaskar Mehta</h1>
+    <p id="test_id">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, adipisci!</p>
+    <h1 class="hello">How are you</h1>
+    <h1 class="hello">How are you2</h1>
+    <h1 class="hello">How are you3</h1>
+    <button class="btn" onclick="alert(`Hello Bhaskar`)">Click Me</button>
+    <script>
+        // Getting Data Using Query Selector ----
+        // console.log(document.querySelector("h1"));
+        // console.log(document.querySelector("#test_id"));
+        // document.querySelector(".btn").click();
+
+        // Getting Data Using getElementById()
+        console.log(document.getElementById("test_id"));
+
+        // Getting Data Using getElementByClassName()
+        console.log(document.getElementsByClassName("hello"));
+
+    </script>
+</body>
+</html>

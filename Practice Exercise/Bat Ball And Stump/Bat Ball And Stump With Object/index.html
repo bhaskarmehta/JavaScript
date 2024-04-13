@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <div>
+        <button class="btn" id="bat" onclick="
+            userChoice = 'Bat';
+            compFunc();
+            winLoseTieScore();
+        ">Bat</button>
+
+        <button class="btn" id="ball" onclick="
+           userChoice= 'Ball';
+           compFunc();
+           winLoseTieScore();
+        ">Ball</button>
+
+        <button class="btn" id="stump" onclick="
+          userChoice='Stump';
+          compFunc();
+          winLoseTieScore();
+        ">Stump</button>
+    </div>
+
+     <div>
+        <h1 id="you"></h1>
+        <h1 id="computer"></h1>
+        <h1 id="result"></h1>
+        <h1 id="won"></h1>
+        <h1 id="lose"></h1>
+        <h1 id="tie"></h1>
+     </div>
+
+    <script>
+          
+        let score = {
+            win: 0,
+            lose: 0,
+            tie: 0,
+            displayScore: ()=>{
+                document.querySelector('#won').innerText=`You have won ${score.win} times`;
+                document.querySelector('#lose').innerText=`You have lost ${score.lose} times`;
+                document.querySelector('#tie').innerText=`Ties are ${score.tie} times`;
+            }
+        }  
+        
+        let userChoice;
+        function compFunc(){
+            let comChoice  = Math.random()*3;
+            let comChoiceVal;
+            if(comChoice<=1){
+                comChoiceVal='Bat';
+                document.querySelector('#computer').innerText=`Computer has choosen ${comChoiceVal}`;
+                document.querySelector('#you').innerText=`You have choosen ${userChoice}`;
+                if(comChoiceVal===userChoice)
+                {
+                    document.querySelector('#result').innerText='It is tie';
+                    score.tie+=1;
+                }
+                else if(userChoice==="Ball"){
+                    document.querySelector('#result').innerText='Computer won the match';
+                    score.lose+=1;
+                }
+                else{
+                    document.querySelector('#result').innerText='You won the match';
+                    score.lose+=1;
+                }
+            }
+            else if(comChoice<=2){
+                comChoiceVal='Ball';
+                document.querySelector('#computer').innerText=`Computer has choosen ${comChoiceVal}`;
+                document.querySelector('#you').innerText=`You have choosen ${userChoice}`;
+                if(comChoiceVal===userChoice)
+                {
+                    document.querySelector('#result').innerText='It is tie';
+                    score.tie+=1;
+                }
+                else if(userChoice==="Bat"){
+                    document.querySelector('#result').innerText='You won the match';
+                    score.win+=1;
+                }
+                else{
+                    document.querySelector('#result').innerText='Computer won the match';
+                    score.lose+=1;
+                }
+            }
+            else{
+                comChoiceVal='Stump';
+                document.querySelector('#computer').innerText=`Computer has choosen ${comChoiceVal}`;
+                document.querySelector('#you').innerText=`You have choosen ${userChoice}`;
+                if(comChoiceVal===userChoice)
+                {
+                    document.querySelector('#result').innerText='It is tie';
+                    score.tie+=1;
+                }
+                else if(userChoice==="Ball"){
+                    document.querySelector('#result').innerText='You won the match';
+                    score.win+=1;
+                }
+                else{
+                    document.querySelector('#result').innerText='Computer won the match';
+                    score.lose+=1;
+                }
+            }
+        }
+
+        function winLoseTieScore(){
+            score.displayScore();
+        }
+
+    </script>
+</body>
+</html>
